@@ -1,0 +1,47 @@
+class Garage():
+    capienza = 0 # Numero massimo di auto
+    auto_presenti = [] # lista di stringhe con le targhe
+    targa=""
+    
+    def __init__(self,capienza):# metodo costruttore che
+                                # inizializza capienza
+        self.capienza = capienza
+    
+    def parcheggia(self,targa): # metodo parcheggia; deve essere 
+                                # minore della capienza
+        targa=""
+        while(len(self.auto_presenti) < self.capienza):
+            # Mi accerto che il garage non sia pieno
+            if(g.isPieno()):
+                print("ATTENZIONE: garage pieno!!\n")
+                
+            else:
+                # Garage non pieno, quindi comincio a parcheggiare
+                for i in range(1,quantita+1):
+                    print(i, "° macchina\n")
+                    targa = input("TARGA: ")   
+                    if(len(targa)<7 or len(targa) > 7):
+                        print("ATTENZIONE: errore di immissione\n")
+                    else:
+                        self.auto_presenti.append(targa)
+    
+    # Metodo che restituisce 
+    def isPieno(self):
+        return len(self.auto_presenti) >= self.capienza
+    
+quantita = -2
+scelta = ""
+while(quantita <= 0 and quantita != -1):      
+    quantita = int(input("Qual è la capienza massima del garage? (-1 per uscire) "))
+    g = Garage(quantita)
+    if(quantita<-1):
+        print("ATTENZIONE: non ci sono posti in garage!!\n")
+    elif(quantita==-1):
+        print("Hai scelto di uscire: CIAOOO, :D\n\n")
+    else:             
+        g.parcheggia(Garage.targa)
+
+
+# 'Siamo sempre là', Mirko:
+# concetti e parti teoriche okay!
+# ho solo bisogno di esercizi, esercizi, esercizi, :D!!!
