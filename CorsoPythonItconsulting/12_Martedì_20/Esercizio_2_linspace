@@ -1,0 +1,23 @@
+import numpy as np
+# 1° punto - Uso linspace per creare un array di 50 numeri equidistanti tra 0 e 10
+array = np.linspace(0, 10, 50)
+print("PRIMO PUNTO\n", array,"\n")
+
+# 2° punto - Uso random.random per creare un array di 50 numeri casuali compresi tra 0 e 1
+array_50_numeri_casuali = np.random.random(50)
+print("SECONDO PUNTO\n", array_50_numeri_casuali,"\n")
+
+# 3. Somma i due array elemento per elemento per ottenere un nuovo array
+array3 = array + array_50_numeri_casuali
+print("TERZO PUNTO\n", array3,"\n")
+
+# 4. Calcola la somma totale degli elementi del nuovo array
+somma_totale = sum(array3)
+print("QUARTO PUNTO\nSOMMA TOTALE:", somma_totale)
+
+# 5. Calcola la somma degli elementi dell'array che sono maggiori di 5
+somma_elementi_maggioriCinque = np.sum(array3[array3 > 5])
+print(somma_elementi_maggioriCinque,"\n")
+
+# 6. Stampa gli array originali, il nuovo array risultante della somma e le somme calcolate.
+print("SESTO PUNTO\nARRAY ORIGINALE:",array,"\nARRAY TRA 50 NUMERI CASUALI TRA 0 E 1",array_50_numeri_casuali)
