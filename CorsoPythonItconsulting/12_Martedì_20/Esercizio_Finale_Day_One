@@ -1,0 +1,52 @@
+import numpy as np
+
+# 1. Creo e stampo un array Numpy, tramite np.arange, di interi compresi tra 0 e 49
+array = np.arange(50)
+print(array)
+
+# Stampo il suo dtype
+print("Dtype:",array.dtype,"\nShape:",array.shape,"\n")
+
+# 2. Modifico il tipo di dato (dtype) dell'array in float64, e stampo nuovamente dtype e shape
+array = array.astype(np.float64)
+print("---------- 2. DOPO MODIFICA ----------")
+print("Dtype:",array.dtype)
+print("Shape:",array.shape,"\n")
+
+# 3. Utilizzo lo slicing per ottenere:
+#   - i primi 10 elementi
+#   - gli ultimi 7 elementi
+#   - gli elementi dall'indice 5 all'indice 20 (escluso)
+#   - ogni quarto elemento dell'array
+print("---------- 3. PRIMI 10 ELEMENTI ----------")
+primi_10 = array[0:10]
+print("3. primi 10 elementi: ",primi_10,"\n")
+
+print("---------- ULTIMI 7 ELEMENTI ----------")
+ultimi_7 = array[43:]
+print(ultimi_7,"\n")
+print("---------- OGNI QUARTO ELEMENTO ----------")
+ogni_quarto = array[::4]
+print(ogni_quarto,"\n")
+
+print("---------- 4. MODIFICO TRAMITE SLICING GLI ELEMENTI DALL'INDICE 10 A 15 (ESCLUSO) ----------")
+array[10:15] = 999
+print(array,"\n")
+
+print("---------- 5. UTILIZZA LA FANCY INDEXING PER SELEZIONARE GLI ELEMENTI IN POSIZIONE [0, 3, 7, 12, 25, 33, 48] ----------")
+indici = [0, 3, 7, 12, 25, 33, 48]
+selezionati = array[indici]
+print(selezionati,"\n")
+
+print("---------- UTILIZZA LA FANCY INDEXING PER SELEZIONARE TUTTI GLI ELEMENTI PARI DELL'ARRAY UTILIZZANDO UNA MASCHERA BOOLEANA ----------")
+maschera = array % 2 == 0
+elementi_pari = array[maschera]
+print(elementi_pari,"\n")
+
+print("---------- UTILIZZA LA FANCY INDEXING PER SELEZIONARE TUTTI GLI ELEMENTI DISPARI DELL'ARRAY UTILIZZANDO UNA MASCHERA BOOLEANA ----------")
+maschera_disp = array % 2 != 0
+elementi_dispari = array[maschera_disp]
+print(elementi_dispari,"\n")
+
+print("---------- UTILIZZA LA FANCY INDEXING PER SELEZIONARE TUTTI GLI ELEMENTI MAGGIORI DELLA MEDIA DELL'ARRAY UTILIZZANDO UNA MASCHERA BOOLEANA ----------")
+# Devo finire quest'ultimo punto, Mirkoooo, :D :D!!!
